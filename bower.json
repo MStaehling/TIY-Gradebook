@@ -1,6 +1,5 @@
 {
   "name": "tiy-gradebook",
-  "private": true,
   "dependencies": {
     "bootstrap-sass": "3.3.4",
     "modernizr": "~2.8.1",
@@ -10,5 +9,18 @@
   "devDependencies": {
     "chai": "~3.0.0",
     "mocha": "~2.2.5"
-  }
+  },
+  "version": "0.0.0--yak-shaving",
+  "homepage": "https://github.com/MStaehling/TIY-Gradebook",
+  "authors": [
+    "Michael Staehling <Michael.staehling@gmail.com>"
+  ],
+  "license": "CC0 1.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
 }
