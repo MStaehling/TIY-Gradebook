@@ -5,7 +5,7 @@
   var app = angular.module('tiy-gradebook', []);
 
 
-  app.controller('MainController', function() {
+  app.controller('MainController', function($http) {
     this.view = null;
     this.page = function(name) {
       this.view = 'views/404.html';
@@ -18,8 +18,14 @@
     }
     this.page('repositories');
 
+    var self = this,
+      app = this;
 
-    // $http.get('/api/github');
+    $http.get('/api/github/repos/TIY/summerFee/milestones.json').then(function(response) {
+      console.log(self);
+    }, function() {
+
+    });
 
   });
 })(window);

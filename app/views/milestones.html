@@ -5,30 +5,31 @@
   <nav>
     <h3><a href="https://github.com/TheIronYard--Orlando/2015--SUMMER--FEE">2015--SUMMER--FEE</a></h3>
     <ul class="list-group">
-      <li class="list-group-item">
-        <h4><a href="#milestone">{{milestone}}</a></h4>
+      <li class="list-group-item" ng-repeat="repo in app.repos ">
+        <h4><a href="#milestone">{{repo.title}}</a></h4>
         <div class="progress">
           <div class="progress-bar" style="width: 30%">{{labels}}</div>
           <div class="progress-bar" style="width: 30%; background-color: green">{{labels}}</div>
           <div class="progress-bar" style="width: 40%; background-color:red">{{labels}}</div>
         </div>
       </li>
-      <li class="list-group-item">
-        <h4><a href="#milestone">{{milestone}}</a></h4>
-        <div class="progress">
-          <div class="progress-bar" style="width: 30%">{{labels}}</div>
-          <div class="progress-bar" style="width: 30%; background-color: green">{{labels}}</div>
-          <div class="progress-bar" style="width: 40%; background-color:red">{{labels}}</div>
-        </div>
-      </li>
-      <li class="list-group-item">
-        <h4><a href="#milestone">{{milestone}}</a></h4>
-        <div class="progress">
-          <div class="progress-bar" style="width: 30%">{{labels}}</div>
-          <div class="progress-bar" style="width: 30%; background-color: green">{{labels}}</div>
-          <div class="progress-bar" style="width: 40%; background-color:red">{{labels}}</div>
-        </div>
-      </li>
+      <!----
+    <li class="list-group-item">
+      <h4><a href="#milestone">{{milestone}}</a></h4>
+      <div class="progress">
+        <div class="progress-bar" style="width: 30%">{{labels}}</div>
+        <div class="progress-bar" style="width: 30%; background-color: green">{{labels}}</div>
+        <div class="progress-bar" style="width: 40%; background-color:red">{{labels}}</div>
+      </div>
+    </li>
+    <li class="list-group-item">
+      <h4><a href="#milestone">{{milestone}}</a></h4>
+      <div class="progress">
+        <div class="progress-bar" style="width: 30%">{{labels}}</div>
+        <div class="progress-bar" style="width: 30%; background-color: green">{{labels}}</div>
+        <div class="progress-bar" style="width: 40%; background-color:red">{{labels}}</div>
+      </div>
+    </li> -->
     </ul>
   </nav>
 </div>
