@@ -28,26 +28,14 @@
       $http.get('/api/github/repos/repos.json')
         .then(function(response) {
           self.repos = response.data.filter(function(year) {
-            return !(year.name.indexOf('2') === -1);
+            return !(year.name.indexOf('201') === -1);
           });
         }, function() {
 
         });
     }); // End of ReposController
 
-  app.controller('MainController', function($http) {
-    this.page = function(name) {
 
-      this.view = 'views/404.html';
-      if ( name == 'repositories') {
-        this.view = 'views/repositories.html';
-      }
-      if ( name == 'milestones') {
-        this.view = 'views/milestones.html';
-      }
-    }
-    this.page('repositories');
-  });
 
     app.controller('MilestonesController', function($http) {
         var mile = this;
@@ -57,6 +45,20 @@
           .then(function(response) {
             mile.milestones = response.data;
           })
+
+          // keep = keep_practicing
+          $http.get('/api/github/repos/issues/all_issues/keep_practicing.json')
+            .then(function(response) {
+              mile.labels = response.data.filter(function(keep){
+                console.log(keep)
+              })
+            })
+
+            function(milestones, label){
+
+
+
+            };
       }); // End of MilestonesController
 
 
