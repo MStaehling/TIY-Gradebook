@@ -35,19 +35,7 @@
         });
     }); // End of ReposController
 
-  app.controller('MainController', function($http) {
-    this.page = function(name) {
 
-      this.view = 'views/404.html';
-      if ( name == 'repositories') {
-        this.view = 'views/repositories.html';
-      }
-      if ( name == 'milestones') {
-        this.view = 'views/milestones.html';
-      }
-    }
-    this.page('repositories');
-  });
 
     app.controller('MilestonesController', function($http) {
         var mile = this;
@@ -55,9 +43,12 @@
         mile.milestones = []
         $http.get('/api/github/repos/TIY/summerFee/milestones.json')
           .then(function(response) {
-            console.log(response);
             mile.milestones = response.data;
           })
+          $http.get('/api/github/repos/issues/all_issues/keep_practicing.json')
+            .then(function(response) {
+              console.log(response);
+            })
       }); // End of MilestonesController
 
 
