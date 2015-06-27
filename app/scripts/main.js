@@ -37,7 +37,6 @@
 
   app.controller('MilestonesController', function($http) {
     var mile = this;
-
     mile.milestones = []
     $http.get('/api/github/repos/TIY/summerFee/issues_pg4.json')
       .then(function(response) {
@@ -53,19 +52,6 @@
           };
         });
       });
-
-
-
-
-    // var coins = [...]
-    // var quarters = []
-    //
-    // _.forEach(coins, function(coin){
-    //   if (coin == quarters){
-    //     quarters.push(coin);
-    //   };
-    // });
-
   }); // End of MilestonesController
 
 
