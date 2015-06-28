@@ -54,11 +54,11 @@
               })
             })
 
-            function(milestones, label){
-
-
-
-            };
+            // function(milestones, label){
+            //
+            //
+            //
+            // };
       }); // End of MilestonesController
 
 
