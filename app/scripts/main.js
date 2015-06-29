@@ -3,7 +3,28 @@
   // $('main.container').load('views/repositories.html');
 
   var app = angular.module('tiy-gradebook', []);
+/* JORGE'S STUFF
+        mile.milestones = []
+        $http.get('/api/github/repos/TIY/summerFee/milestones.json')
+          .then(function(response) {
+            mile.milestones = response.data;
+          })
 
+          // keep = keep_practicing
+          $http.get('/api/github/repos/issues/all_issues/keep_practicing.json')
+            .then(function(response) {
+              mile.labels = response.data.filter(function(keep){
+                console.log(keep)
+              })
+            })
+
+            // function(milestones, label){
+            //
+            //
+            //
+            // };
+      }); // End of MilestonesController
+      */
 
   app.controller('MainController', function() {
     this.view = null;
