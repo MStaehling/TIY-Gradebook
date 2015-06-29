@@ -1,68 +1,73 @@
 (function(window) {
-    //with query.load
-    // $('main.container').load('views/repositories.html');
+  //with query.load
+  // $('main.container').load('views/repositories.html');
 
-    var app = angular.module('tiy-gradebook', []);
+  var app = angular.module('tiy-gradebook', []);
 
 
-    app.controller('MainController', function() {
-      this.view = null;
-      this.page = function(name) {
-        this.view = 'views/404.html';
-        if (name == 'repositories') {
-          this.view = 'views/repositories.html';
-        }
-        if (name == 'milestones') {
-          this.view = 'views/milestones.html';
-        }
+  app.controller('MainController', function() {
+    this.view = null;
+    this.page = function(name) {
+      this.view = 'views/404.html';
+      if (name == 'repositories') {
+        this.view = 'views/repositories.html';
       }
-      this.page('repositories');
-    }); // End of Main controller
+      if (name == 'milestones') {
+        this.view = 'views/milestones.html';
+      }
+    }
+    this.page('repositories');
+  }); // End of Main controller
 
 
-    app.controller('ReposController', function($http) {
-      var self = this;
+  app.controller('ReposController', function($http) {
+    var self = this;
 
-      self.repos = [];
+    self.repos = [];
 
-      $http.get('/api/github/repos/repos.json')
-        .then(function(response) {
-          self.repos = response.data.filter(function(year) {
-            return !(year.name.indexOf('201') === -1);
-          });
-        }, function() {
-
+    $http.get('/api/github/repos/repos.json')
+      .then(function(response) {
+        self.repos = response.data.filter(function(year) {
+          return !(year.name.indexOf('201') === -1);
         });
-    }); // End of ReposController
+      }, function() {
+
+      });
+  }); // End of ReposController
 
 
 
-    app.controller('MilestonesController', function($http) {
-        var mile = this;
+  app.controller('MilestonesController', function($http) {
+    var mile = this;
 
-        mile.milestones = []
-        $http.get('/api/github/repos/TIY/summerFee/milestones.json')
-          .then(function(response) {
-            mile.milestones = response.data;
-          })
+    mile.milestones = [];
 
-          // keep = keep_practicing
-          $http.get('/api/github/repos/issues/all_issues/keep_practicing.json')
-            .then(function(response) {
-              mile.labels = response.data.filter(function(keep){
-                console.log(keep)
-              })
-            })
+    $http.get('/api/github/repos/TIY/summerFee/milestones.json')
+      .then(function(response) {
+        mile.milestones = response.data;
+      })
 
-            function(milestones, label){
+  }); // End of MilestonesController
 
+  app.controller('LabelController', function($http) {
+    var kp = this;
 
+    kp.issue = [];
 
-            };
-      }); // End of MilestonesController
-
+    $http.get('/api/github/repos/issues/all_issues/keep_practicing.json')
+      .then(function(response) {
+        console.log(response);
+      })
+  });
 
 
 
 
-    })(window);
+
+})(window);
+
+/*_.forEach(coins, fn(coin) {
+  if (coin == quarter) {
+    quarters.push(coin);
+  }
+});*/
