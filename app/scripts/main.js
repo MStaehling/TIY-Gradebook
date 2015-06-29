@@ -42,15 +42,23 @@
       .then(function(response) {
         mile.milestones = response.data;
 
-        var labels = response.data[0].labels[0].name;
-        console.log(labels);
+console.log(response.data[0].labels);
         var keepPraciticing = [];
-
-        _.forEach(labels, function(label) {
-          if (label == 'Keep Praciticing') {
-            keepPraciticing.push(label);
-          };
+        var labels = response.data[0].labels.filter(function(label){
+          return !(label.name('Keep Praciticing') === -1);
         });
+        console.log(labels);
+
+
+      // keepPraciticing =  _.pluck(_.filter(labels, {name: 'Keep Praciticing'}), 'labels');
+      // console.log(keepPraciticing);
+
+        // _.forEach(labels, function(label) {
+        //   if (labels.labels.name == 'Keep Praciticing') {
+        //     return label.push(keepPraciticing);
+        //   };
+        //   console.log(keepPraciticing);
+        // });
       });
   }); // End of MilestonesController
 
