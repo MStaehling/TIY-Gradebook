@@ -55,7 +55,7 @@
       .then(function(response) {
         mile.milestones = response.data;
       });
-    $http.get('/api/github/repos/issues/all_issues/00All.json')
+    $http.get('/api/github/repos/issues/all_issues/0All.json')
       .then(function(response) {
         console.log(response);
         mile.notYet.width = progWidth(response, 'Not Yet');

@@ -10,9 +10,9 @@
       <li class="list-group-item" ng-repeat="assignment in mile.milestones">
         <h4><a href="{{assignment.html_url}}">{{assignment.title}}</a></h4>
         <div class="progress">
-          <div class="progress-bar" ng-style="{ 'width' : mile.notYet.width, 'background' : mile.veryGood.bgColor }">{{labels}}</div>
-          <div class="progress-bar" ng-style="{ 'width' : mile.keepPracticing.width, 'background' : mile.keepPracticing.bgColor }">{{labels}}</div>
           <div class="progress-bar" ng-style="{ 'width' : mile.veryGood.width, 'background' : mile.notYet.bgColor }">{{labels}}</div>
+          <div class="progress-bar" ng-style="{ 'width' : mile.keepPracticing.width, 'background' : mile.keepPracticing.bgColor }">{{labels}}</div>
+          <div class="progress-bar" ng-style="{ 'width' : mile.notYet.width, 'background' : mile.veryGood.bgColor }">{{labels}}</div>
         </div>
       </li>
     </ul>
