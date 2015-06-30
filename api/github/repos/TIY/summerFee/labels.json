@@ -1,0 +1,22 @@
+[
+  {
+    "url": "https://api.github.com/repos/TheIronYard--Orlando/2015--SUMMER--FEE/labels/Attendance",
+    "name": "Attendance",
+    "color": "c7def8"
+  },
+  {
+    "url": "https://api.github.com/repos/TheIronYard--Orlando/2015--SUMMER--FEE/labels/Very%20Good",
+    "name": "Very Good",
+    "color": "009800"
+  },
+  {
+    "url": "https://api.github.com/repos/TheIronYard--Orlando/2015--SUMMER--FEE/labels/Keep%20Practicing",
+    "name": "Keep Practicing",
+    "color": "fbca04"
+  },
+  {
+    "url": "https://api.github.com/repos/TheIronYard--Orlando/2015--SUMMER--FEE/labels/Not%20Yet",
+    "name": "Not Yet",
+    "color": "e11d21"
+  }
+]

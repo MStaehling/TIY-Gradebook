@@ -1,0 +1,18 @@
+<main class="container-fluid">
+  <div id="Classes_List">
+    <ul class="list-group" ng-controller="ReposController as repo">
+      <li class="list-group-item" ng-repeat="classRepos in repo.repos ">
+        <h3>{{classRepos.name}}</h3>
+        <author>{{repo.creator}}
+          <a href="https://github.com/al-the-x">@{{repo.created_by.name}}</a>
+        </author>
+        <nav>
+          <a href="#" ng-click="app.page('milestones')">Assignments</a>
+          <a href="https://github.com/TheIronYard--Orlando/2015--SUMMER--FEE/issues?q=label%3A">Attendance</a>
+          <a href="https://github.com/TheIronYard--Orlando/2015--SUMMER--FEE">Github</a>
+        </nav>
+      </li>
+    </ul>
+  </div>
+</main>
+<!-- .container -->
